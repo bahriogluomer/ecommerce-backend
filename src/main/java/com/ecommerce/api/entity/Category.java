@@ -9,14 +9,15 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Data
+@Entity
 @Table(name = "categories", schema = "ecommerce")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String code;
+    private String title;
     private String img;
     private Double rating;
     private String gender;

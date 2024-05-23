@@ -37,11 +37,13 @@ import java.util.List;
 @Entity
 @Table(name = "orders", schema = "ecommerce")
 public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="order_date")
     @ManyToOne
     @JoinColumn(name = "address_id")
     private Address address;
+    @Column(name="order_date")
     private Instant orderDate;
     @ManyToOne
     @JoinColumn(name = "user_id")

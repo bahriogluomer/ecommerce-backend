@@ -1,6 +1,8 @@
 package com.ecommerce.api.service;
 
-public interface AddressService {
+import com.ecommerce.api.entity.Address;
 
+public interface AddressService {
+     Address findById(Long id);
 
 }

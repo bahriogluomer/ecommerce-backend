@@ -11,19 +11,23 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "roles", schema = "ecommerce")
+@Table(name = "store", schema = "ecommerce")
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+
     private String name;
+
     private String phone;
     @Column(name = "tax_no")
+
     private String taxNo;
+
     @Column(name = "bank_account")
     private String bankAccount;
-    @OneToOne(cascade = CascadeType.ALL)
     @NotNull
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 }

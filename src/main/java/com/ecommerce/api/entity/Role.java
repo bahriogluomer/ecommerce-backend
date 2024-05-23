@@ -16,4 +16,6 @@ public class Role implements GrantedAuthority {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String authority;
+    private String name;
+    private String code;
 }
