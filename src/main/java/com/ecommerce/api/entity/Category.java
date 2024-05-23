@@ -1,5 +1,6 @@
 package com.ecommerce.api.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Category {
     private Double rating;
     private String gender;
     @OneToMany(mappedBy = "category", cascade = {CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE, CascadeType.PERSIST})
+    @JsonManagedReference
     private List<Product> products;
 }

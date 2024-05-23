@@ -26,7 +26,6 @@ public class Store {
 
     @Column(name = "bank_account")
     private String bankAccount;
-    @NotNull
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
